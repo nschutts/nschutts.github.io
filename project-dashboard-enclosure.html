@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Enclosure — Nick Schutts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<span class="tick tl"></span>
+<span class="tick tr"></span>
+<span class="tick bl"></span>
+<span class="tick br"></span>
+
+<div class="sheet">
+
+  <header class="site-header">
+    <nav class="topnav">
+      <a href="index.html" class="logo">N.SCHUTTS</a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+        <a href="Nick_Schutts_Resume.pdf" class="resume-link" target="_blank" rel="noopener">Résumé</a>
+      </div>
+    </nav>
+    <div class="page-header">
+      <a class="back-link" href="projects.html">&larr; All projects</a>
+      <p class="eyebrow">Formula UBC Racing — Electrical Subteam</p>
+      <h1>Dashboard Enclosure</h1>
+      <p class="lede">A 3D-printed housing for the driver dashboard electronics
+        on UBC's 2025/26 Formula SAE car.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="border-top:none;">
+      <div class="project-card">
+        <p>
+          The dashboard sits at the intersection of almost every subsystem on
+          the car: it has to house the driver display and switches, route
+          wiring from multiple harnesses, and bolt cleanly into the chassis
+          without interfering with the steering column or bodywork. I designed
+          the enclosure that holds all of it together.
+        </p>
+        <p>
+          Packaging was the hard constraint. The enclosure needed clearance for
+          connectors on every side, mounting points shared with neighbouring
+          subsystems, and enough structural rigidity to survive vibration on
+          track — all inside a footprint dictated by the cockpit, not the
+          electronics. I iterated through several SolidWorks revisions,
+          checking fit against the wiring harness and the surrounding
+          bodywork at each pass before handing the part off for 3D printing
+          and in-car fit testing.
+        </p>
+        <p>
+          It's a small part with an outsized number of constraints touching
+          it — a good summary of what electrical subteam work looks like on a
+          Formula SAE team.
+        </p>
+        <div class="tag-row">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Altair</span>
+          <span class="tag">3D printing</span>
+          <span class="tag">Electrical integration</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="mailto:nicholas.schutts@gmail.com">nicholas.schutts@gmail.com</a>
+        <a href="https://www.linkedin.com/in/nick-schutts-b05521326/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/nschutts" target="_blank" rel="noopener">GitHub</a>
+        <a href="Nick_Schutts_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      </div>
+      <p class="footnote">&copy; <span class="js-year"></span> Nick Schutts</p>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
