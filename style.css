@@ -252,7 +252,7 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 }
 .project-tile:hover{ border-color: var(--rust); }
 .project-tile .thumb{ width: 100%; height: 160px; object-fit: cover; display: block; }
-.project-tile .thumb-placeholder{
+.thumb-placeholder{
   width: 100%;
   height: 160px;
   display: flex;
@@ -277,6 +277,27 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .project-tile:hover .view-link{ color: var(--rust); }
 .project-tile.placeholder{ color: var(--muted); border-style: dashed; }
 .project-tile.placeholder:hover{ border-color: var(--line); }
+.project-tile.in-progress{ border-style: dashed; }
+.project-tile.in-progress:hover{ border-color: var(--rust); }
+
+.badge-progress{
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  border: 1px dashed var(--rust);
+  color: var(--rust);
+  padding: 0.2rem 0.55rem;
+}
+.thumb-progress{
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 10px, #ECEAE3 10px, #ECEAE3 20px);
+  border-bottom: 1px dashed var(--line);
+}
 
 /* Project detail */
 .project-card{ border: 1px solid var(--line); padding: clamp(1.5rem, 4vw, 2.25rem); }
@@ -311,8 +332,9 @@ main{ background: var(--paper); padding: 0 var(--gap); }
   font-style: italic;
 }
 
-/* Contact page */
-.contact-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+/* Icon links (used on the home hero) */
+.hero-location{ color: rgba(243,242,237,0.6); font-size: 0.85rem; margin: 0 0 1.25rem; }
+
 .icon-row{ display: flex; flex-wrap: wrap; gap: 1.75rem; margin: 0 0 2rem; }
 .icon-link{
   display: flex;
@@ -336,12 +358,74 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .icon-link:hover .icon-box{ border-color: var(--rust); }
 .icon-link:hover svg{ stroke: var(--rust); }
 .icon-link:hover span{ color: var(--rust); }
-.contact-location{
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin: 0;
+
+.icon-row.on-dark .icon-link{ color: rgba(243,242,237,0.75); }
+.icon-row.on-dark .icon-box{ border-color: rgba(243,242,237,0.35); }
+.icon-row.on-dark svg{ stroke: var(--blue-light); }
+.icon-row.on-dark .icon-link:hover .icon-box{ border-color: var(--rust-light); }
+.icon-row.on-dark .icon-link:hover svg{ stroke: var(--rust-light); }
+.icon-row.on-dark .icon-link:hover span{ color: var(--rust-light); }
+
+/* ---------- Chip nav (home, "Explore") ---------- */
+.chip-nav{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 2rem 0 1rem;
 }
+.chip-nav::before{
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 1px;
+  background: var(--line);
+  z-index: 0;
+}
+.chip{
+  position: relative;
+  z-index: 1;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--line);
+  padding: 1.5rem 1.75rem;
+  min-width: 170px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0.75rem 2rem;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.chip::before, .chip::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  background: var(--line);
+  transform: translateY(-1px);
+}
+.chip::before{ left: -16px; }
+.chip::after{ right: -16px; }
+.chip h3{ margin: 0; font-family: "Space Grotesk", sans-serif; font-size: 1.05rem; }
+.chip p{
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  color: rgba(243,242,237,0.7);
+  transition: opacity 0.2s ease, max-height 0.2s ease;
+}
+.chip:hover, .chip:focus-visible{
+  transform: translateY(-4px);
+  background: var(--rust);
+  color: var(--ink);
+}
+.chip:hover p, .chip:focus-visible p{ opacity: 1; max-height: 50px; color: rgba(23,25,27,0.8); }
 
 /* ---------- Footer ---------- */
 .site-footer{ background: var(--ink); color: var(--paper); }
@@ -350,52 +434,6 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .footer-links a{ color: rgba(243,242,237,0.75); text-decoration: none; }
 .footer-links a:hover{ color: var(--rust-light); }
 .footnote{ margin: 0; font-size: 0.78rem; color: rgba(243,242,237,0.45); }
-
-/* ---------- Bubble nav (home) ---------- */
-.bubble-nav{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: clamp(1.25rem, 4vw, 2.5rem);
-  padding: 1.5rem 0 0.5rem;
-}
-.bubble{
-  --size: 152px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--ink);
-  color: var(--paper);
-  text-decoration: none;
-  padding: 1rem;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-}
-.bubble h3{
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1.2;
-}
-.bubble p{
-  font-size: 0.76rem;
-  margin: 0.4rem 0 0;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  color: rgba(23,25,27,0.75);
-  transition: opacity 0.2s ease 0.05s, max-height 0.2s ease;
-}
-.bubble:hover, .bubble:focus-visible{
-  transform: scale(1.14);
-  background: var(--rust);
-  color: var(--ink);
-}
-.bubble:hover p, .bubble:focus-visible p{ opacity: 1; max-height: 70px; }
 
 /* ---------- Photo gallery + lightbox ---------- */
 .gallery{
@@ -456,8 +494,11 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 800px){
-  .about-grid, .edu-grid, .skills-grid, .contact-grid{ grid-template-columns: 1fr; }
+  .about-grid, .edu-grid, .skills-grid{ grid-template-columns: 1fr; }
   .tl-item{ grid-template-columns: 1fr; gap: 0.4rem; }
   .topnav{ flex-direction: column; align-items: flex-start; }
   .navlinks{ font-size: 0.85rem; row-gap: 0.5rem; }
+  .chip-nav::before{ display: none; }
+  .chip{ margin: 0.5rem 0; width: 100%; max-width: 320px; }
+  .chip::before, .chip::after{ display: none; }
 }
