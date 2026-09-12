@@ -1,11 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My GitHub Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick Schutts — Engineering</title>
+<meta name="description" content="Nick Schutts — Mechanical/Electrical Engineering student at UBC, Formula UBC Racing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my brand new website.</p>
+
+<div class="sheet">
+  <span class="tick tl"></span>
+  <span class="tick tr"></span>
+  <span class="tick bl"></span>
+  <span class="tick br"></span>
+
+  <header class="hero" id="top">
+    <nav class="topnav">
+      <span class="logo">N.SCHUTTS</span>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#project">Project</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mechanical &amp; Electrical Engineering — UBC</p>
+        <h1>Nick<br>Schutts</h1>
+        <p class="hero-sub">Engineering student at the University of British Columbia,
+          currently designing electrical hardware for Formula UBC Racing's
+          2025/26 Formula SAE car.</p>
+        <div class="hero-meta">
+          <a href="mailto:nicholas.schutts@gmail.com">nicholas.schutts@gmail.com</a>
+          <span>604&#8209;753&#8209;7214</span>
+          <span>North Vancouver, BC</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" id="blueprint-svg">
+          <!-- dashboard enclosure line drawing -->
+          <rect x="60" y="60" width="200" height="120" rx="4" class="draw" pathLength="1"/>
+          <rect x="80" y="80" width="60" height="30" class="draw" pathLength="1"/>
+          <circle cx="220" cy="95" r="14" class="draw" pathLength="1"/>
+          <line x1="80" y1="130" x2="220" y2="130" class="draw" pathLength="1"/>
+          <line x1="80" y1="145" x2="180" y2="145" class="draw" pathLength="1"/>
+          <line x1="80" y1="160" x2="200" y2="160" class="draw" pathLength="1"/>
+          <!-- dimension lines -->
+          <line x1="60" y1="200" x2="260" y2="200" class="dim" pathLength="1"/>
+          <line x1="60" y1="194" x2="60" y2="206" class="dim" pathLength="1"/>
+          <line x1="260" y1="194" x2="260" y2="206" class="dim" pathLength="1"/>
+          <text x="160" y="220" class="dim-label" text-anchor="middle">204 mm</text>
+          <line x1="288" y1="60" x2="288" y2="180" class="dim" pathLength="1"/>
+          <line x1="282" y1="60" x2="294" y2="60" class="dim" pathLength="1"/>
+          <line x1="282" y1="180" x2="294" y2="180" class="dim" pathLength="1"/>
+          <text x="300" y="123" class="dim-label" text-anchor="start">120 mm</text>
+          <text x="60" y="45" class="dim-label" text-anchor="start">DASH ENCLOSURE — REV C</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section about" id="about">
+      <div class="section-head">
+        <span class="section-index">About</span>
+        <h2>Field notes</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-copy">
+          I'm a second-year engineering student at UBC with three-plus years of
+          professional work behind me already — bartending, pharmacy, and now
+          electrical systems for a Formula SAE race car. I like environments
+          where precision and pace both matter: a full bar on a Friday night
+          isn't so different from a wiring harness with a deadline. Outside
+          of coursework, I design and build hardware with SolidWorks and Altair,
+          and I gravitate toward roles where I end up teaching or leading —
+          organizing exam prep for 120 classmates, captaining a varsity team,
+          presenting technical work to teammates who don't share my background.
+        </p>
+        <dl class="spec-sheet">
+          <div><dt>GPA</dt><dd>93.2%</dd></div>
+          <div><dt>Program</dt><dd>BASc, Engineering</dd></div>
+          <div><dt>Team</dt><dd>Formula UBC Racing</dd></div>
+          <div><dt>Based</dt><dd>North Vancouver, BC</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="section-head">
+        <span class="section-index">Experience</span>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-date"><span class="mono">Apr 2026 — Present</span></div>
+          <div class="tl-body">
+            <h3>Bartender</h3>
+            <p class="tl-org">Northview Golf and Country Club, Surrey BC</p>
+            <ul>
+              <li>Work solo in a fast-paced, high-pressure environment, prioritizing multiple concurrent tasks under strict time constraints.</li>
+              <li>Hold consistently high drink standards, garnish preparation, and product knowledge.</li>
+              <li>Maintain cleanliness, organization, and inventory, coordinating between guests, servers, kitchen staff, and management.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item current">
+          <div class="tl-date"><span class="mono">Sep 2025 — Present</span></div>
+          <div class="tl-body">
+            <h3>Electrical Subteam Member</h3>
+            <p class="tl-org">Formula UBC Racing, Vancouver BC</p>
+            <ul>
+              <li>Designed a 3D-printed dashboard enclosure for UBC's 2025/26 Formula SAE car in SolidWorks, ensuring electrical compatibility and integration with other vehicle subsystems.</li>
+              <li>Create and deliver technical presentations to keep subteams aligned.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-date"><span class="mono">Feb 2023 — Aug 2025</span></div>
+          <div class="tl-body">
+            <h3>Pharmacy Assistant</h3>
+            <p class="tl-org">Northmount Pharmacy, North Vancouver BC</p>
+            <ul>
+              <li>Provided professional customer service to patients in person and by phone.</li>
+              <li>Collaborated with pharmacists to accurately fill up to 225 prescriptions per day.</li>
+              <li>Managed inventory, drug ordering, prescription filing, expired medication returns, and courier deliveries.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section project" id="project">
+      <div class="section-head">
+        <span class="section-index">Project</span>
+        <h2>Dashboard enclosure, Formula SAE</h2>
+      </div>
+      <div class="project-card">
+        <p>
+          For UBC's 2025/26 Formula SAE car, I designed the 3D-printed enclosure
+          housing the driver dashboard electronics — balancing tight packaging
+          constraints against wiring access, connector clearance, and mounting
+          points shared with neighbouring subsystems. The part went through
+          several SolidWorks revisions before being handed off for print and
+          in-car fit testing.
+        </p>
+        <div class="tag-row">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Altair</span>
+          <span class="tag">3D printing</span>
+          <span class="tag">Electrical integration</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education" id="education">
+      <div class="section-head">
+        <span class="section-index">Education</span>
+        <h2>Academic record</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <span class="mono">Sep 2025 — Present</span>
+          <h3>Bachelor of Applied Science, Engineering</h3>
+          <p class="tl-org">University of British Columbia, Vancouver BC</p>
+          <ul>
+            <li>GPA: 93.2%</li>
+            <li>First Year Ball Model Lead for "E-Week"</li>
+            <li>Organized practice midterms for 120+ first-year engineering students</li>
+          </ul>
+        </div>
+        <div class="edu-card">
+          <span class="mono">Sep 2021 — Jun 2025</span>
+          <h3>BC Dogwood Diploma</h3>
+          <p class="tl-org">Vancouver Waldorf School, North Vancouver BC</p>
+          <ul>
+            <li>GPA: 95.5%</li>
+            <li>BC Academic Achievement Scholarship</li>
+            <li>Varsity Basketball Team Captain, Grade 11/12</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-head">
+        <span class="section-index">Skills</span>
+        <h2>Toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Engineering</h3>
+          <ul class="tick-list">
+            <li>SolidWorks</li>
+            <li>Altair</li>
+            <li>Excel</li>
+            <li>3D printing / prototyping</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Professional</h3>
+          <ul class="tick-list">
+            <li>Customer service under pressure</li>
+            <li>Cross-team communication</li>
+            <li>Leadership &amp; team captaincy</li>
+            <li>Working independently to deadlines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Get in touch</h2>
+      <div class="contact-links">
+        <a href="mailto:nicholas.schutts@gmail.com">nicholas.schutts@gmail.com</a>
+        <span>604&#8209;753&#8209;7214</span>
+        <span>North Vancouver, BC</span>
+      </div>
+      <p class="footnote">Site last drafted <span class="mono" id="year"></span></p>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
