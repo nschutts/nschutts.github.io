@@ -226,21 +226,6 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .spec-sheet dt{ color: var(--muted); font-size: 0.9rem; }
 .spec-sheet dd{ margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 0.9rem; text-align: right; }
 
-/* Quick-nav tiles (home) */
-.nav-tiles{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.nav-tile{ background: var(--paper); padding: 1.75rem; text-decoration: none; color: var(--ink); display: block; }
-.nav-tile:hover{ background: var(--ink); }
-.nav-tile h3{ font-family: "Space Grotesk", sans-serif; margin: 0 0 0.4rem; font-size: 1.05rem; }
-.nav-tile p{ margin: 0; color: var(--muted); font-size: 0.88rem; }
-.nav-tile:hover h3{ color: var(--paper); }
-.nav-tile:hover p{ color: rgba(243,242,237,0.7); }
-
 /* Timeline */
 .timeline{ list-style: none; margin: 0; padding: 0; }
 .tl-item{ display: grid; grid-template-columns: 170px 1fr; gap: var(--gap); padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
@@ -313,12 +298,114 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .footer-links a:hover{ color: var(--rust-light); }
 .footnote{ margin: 0; font-size: 0.78rem; color: rgba(243,242,237,0.45); }
 
+/* ---------- Bubble nav (home) ---------- */
+.bubble-nav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  padding: 1.5rem 0 0.5rem;
+}
+.bubble{
+  --size: 152px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  padding: 1rem;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.bubble h3{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+.bubble p{
+  font-size: 0.76rem;
+  margin: 0.4rem 0 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  color: rgba(23,25,27,0.75);
+  transition: opacity 0.2s ease 0.05s, max-height 0.2s ease;
+}
+.bubble:hover, .bubble:focus-visible{
+  transform: scale(1.14);
+  background: var(--rust);
+  color: var(--ink);
+}
+.bubble:hover p, .bubble:focus-visible p{ opacity: 1; max-height: 70px; }
+
+/* ---------- Photo gallery + lightbox ---------- */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 2rem;
+}
+.gallery figure{ margin: 0; border: 1px solid var(--line); }
+.gallery img{ display: block; width: 100%; height: 220px; object-fit: cover; cursor: zoom-in; }
+.gallery figcaption{
+  padding: 0.6rem 0.85rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.gallery .feature{ grid-column: 1 / -1; }
+.gallery .feature img{ height: 340px; }
+
+.lightbox-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(23,25,27,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active{ opacity: 1; pointer-events: auto; }
+.lightbox-overlay img{
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid rgba(243,242,237,0.2);
+}
+
+/* Drawing viewer block on project pages */
+.drawing-block{ border: 1px solid var(--line); margin: 0 0 2rem; }
+.drawing-block img{ display: block; width: 100%; cursor: zoom-in; }
+.drawing-block .drawing-foot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--line);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.drawing-block .drawing-foot a{ color: var(--blue); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 800px){
   .hero-grid{ grid-template-columns: 1fr; }
   .hero-art{ order: -1; max-width: 280px; }
   .about-grid, .edu-grid, .skills-grid, .contact-grid{ grid-template-columns: 1fr; }
-  .nav-tiles{ grid-template-columns: 1fr; }
   .tl-item{ grid-template-columns: 1fr; gap: 0.4rem; }
   .topnav{ flex-direction: column; align-items: flex-start; }
   .navlinks{ font-size: 0.85rem; row-gap: 0.5rem; }
