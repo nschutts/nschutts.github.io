@@ -105,12 +105,17 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--rust); outline-o
 .hero{ padding-bottom: clamp(2rem, 6vw, 4rem); }
 
 .hero-grid{
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
   padding: clamp(2.5rem, 8vw, 5rem) var(--gap) 0;
 }
-.hero-art{ width: 100%; max-width: 720px; }
+.hero-name-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+.hero-art{ flex: 1 1 320px; max-width: 420px; min-width: 220px; }
 
 .eyebrow{
   font-family: "IBM Plex Mono", monospace;
@@ -125,7 +130,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--rust); outline-o
   font-size: clamp(3rem, 8vw, 5.5rem);
   line-height: 0.98;
   letter-spacing: -0.02em;
-  margin: 0 0 1.25rem;
+  margin: 0;
   color: var(--paper);
 }
 
@@ -315,8 +320,7 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .edu-card li{ margin-bottom: 0.3rem; }
 
 /* Skills */
-.skills-grid{ display: block; }
-.skill-group.full .tick-list{ columns: 2; column-gap: var(--gap); }
+.skills-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 .skill-group h3{ font-family: "Space Grotesk", sans-serif; font-size: 1rem; margin: 0 0 0.9rem; }
 .tick-list{ list-style: none; margin: 0; padding: 0; }
 .tick-list li{ padding: 0.55rem 0 0.55rem 1.4rem; border-bottom: 1px solid var(--line); position: relative; font-size: 0.95rem; break-inside: avoid; }
@@ -366,66 +370,18 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .icon-row.on-dark .icon-link:hover svg{ stroke: var(--rust-light); }
 .icon-row.on-dark .icon-link:hover span{ color: var(--rust-light); }
 
-/* ---------- Chip nav (home, "Explore") ---------- */
-.chip-nav{
-  position: relative;
+/* ---------- Explore line (home, bottom) ---------- */
+.explore-line{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 0;
-  padding: 2rem 0 1rem;
+  gap: 2.5rem;
+  padding: 1rem 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
 }
-.chip-nav::before{
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 50%;
-  height: 1px;
-  background: var(--line);
-  z-index: 0;
-}
-.chip{
-  position: relative;
-  z-index: 1;
-  background: var(--ink);
-  color: var(--paper);
-  border: 1px solid var(--line);
-  padding: 1.5rem 1.75rem;
-  min-width: 170px;
-  text-align: center;
-  text-decoration: none;
-  margin: 0.75rem 2rem;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-.chip::before, .chip::after{
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 16px;
-  height: 2px;
-  background: var(--line);
-  transform: translateY(-1px);
-}
-.chip::before{ left: -16px; }
-.chip::after{ right: -16px; }
-.chip h3{ margin: 0; font-family: "Space Grotesk", sans-serif; font-size: 1.05rem; }
-.chip p{
-  margin: 0.5rem 0 0;
-  font-size: 0.78rem;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  color: rgba(243,242,237,0.7);
-  transition: opacity 0.2s ease, max-height 0.2s ease;
-}
-.chip:hover, .chip:focus-visible{
-  transform: translateY(-4px);
-  background: var(--rust);
-  color: var(--ink);
-}
-.chip:hover p, .chip:focus-visible p{ opacity: 1; max-height: 50px; color: rgba(23,25,27,0.8); }
+.explore-line a{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.explore-line a:hover{ color: var(--rust); border-color: var(--rust); }
 
 /* ---------- Footer ---------- */
 .site-footer{ background: var(--ink); color: var(--paper); }
@@ -498,7 +454,5 @@ main{ background: var(--paper); padding: 0 var(--gap); }
   .tl-item{ grid-template-columns: 1fr; gap: 0.4rem; }
   .topnav{ flex-direction: column; align-items: flex-start; }
   .navlinks{ font-size: 0.85rem; row-gap: 0.5rem; }
-  .chip-nav::before{ display: none; }
-  .chip{ margin: 0.5rem 0; width: 100%; max-width: 320px; }
-  .chip::before, .chip::after{ display: none; }
+  .explore-line{ gap: 1.25rem 2rem; }
 }

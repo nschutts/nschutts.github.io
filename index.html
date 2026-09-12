@@ -33,7 +33,39 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Engineering Physics — UBC</p>
-        <h1>Nick<br>Schutts</h1>
+        <div class="hero-name-row">
+          <h1>Nick<br>Schutts</h1>
+          <div class="hero-art" aria-hidden="true">
+            <svg viewBox="0 0 490 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- outline traced from the plan view of EL-40804 -->
+              <path class="draw" pathLength="1" d="M20,110 Q0,110 0,85 L0,68 Q0,48 25,40 L150,16 Q170,9 190,20 L222,33 L258,33 L290,20 Q310,9 330,16 L455,40 Q480,48 480,68 L480,85 Q480,110 460,110 Z"/>
+              <!-- mounting holes -->
+              <circle class="draw" pathLength="1" cx="60" cy="46" r="4"/>
+              <circle class="draw" pathLength="1" cx="95" cy="46" r="4"/>
+              <circle class="draw" pathLength="1" cx="385" cy="46" r="4"/>
+              <circle class="draw" pathLength="1" cx="420" cy="46" r="4"/>
+              <!-- LED strip slot -->
+              <line class="draw" pathLength="1" x1="195" y1="46" x2="285" y2="46"/>
+              <!-- centre digit display -->
+              <rect class="draw" pathLength="1" x="228" y="58" width="24" height="18"/>
+              <!-- toggle switches -->
+              <circle class="draw" pathLength="1" cx="208" cy="67" r="5"/>
+              <circle class="draw" pathLength="1" cx="272" cy="67" r="5"/>
+              <!-- push button -->
+              <circle class="draw" pathLength="1" cx="440" cy="55" r="8"/>
+              <!-- 5-digit displays, left and right -->
+              <rect class="draw" pathLength="1" x="35" y="80" width="56" height="20"/>
+              <rect class="draw" pathLength="1" x="389" y="80" width="56" height="20"/>
+
+              <!-- dimensions -->
+              <line x1="0" y1="130" x2="480" y2="130" class="dim" pathLength="1"/>
+              <line x1="0" y1="124" x2="0" y2="136" class="dim" pathLength="1"/>
+              <line x1="480" y1="124" x2="480" y2="136" class="dim" pathLength="1"/>
+              <text x="240" y="150" class="dim-label" text-anchor="middle">336 &#215; 70 mm</text>
+              <text x="0" y="6" class="dim-label" text-anchor="start">EL-40804 — REV AA</text>
+            </svg>
+          </div>
+        </div>
         <p class="hero-sub">Engineering Physics student at the University of British Columbia,
           currently designing electrical hardware for Formula UBC Racing's
           2025/26 Formula SAE car.</p>
@@ -65,37 +97,6 @@
           </a>
         </div>
         <a class="btn" href="projects.html" style="margin-top:1.5rem;">View projects</a>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 490 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- outline traced from the plan view of EL-40804 -->
-          <path class="draw" pathLength="1" d="M20,110 Q0,110 0,85 L0,68 Q0,48 25,40 L150,16 Q170,9 190,20 L222,33 L258,33 L290,20 Q310,9 330,16 L455,40 Q480,48 480,68 L480,85 Q480,110 460,110 Z"/>
-          <!-- mounting holes -->
-          <circle class="draw" pathLength="1" cx="60" cy="46" r="4"/>
-          <circle class="draw" pathLength="1" cx="95" cy="46" r="4"/>
-          <circle class="draw" pathLength="1" cx="385" cy="46" r="4"/>
-          <circle class="draw" pathLength="1" cx="420" cy="46" r="4"/>
-          <!-- LED strip slot -->
-          <line class="draw" pathLength="1" x1="195" y1="46" x2="285" y2="46"/>
-          <!-- centre digit display -->
-          <rect class="draw" pathLength="1" x="228" y="58" width="24" height="18"/>
-          <!-- toggle switches -->
-          <circle class="draw" pathLength="1" cx="208" cy="67" r="5"/>
-          <circle class="draw" pathLength="1" cx="272" cy="67" r="5"/>
-          <!-- push button -->
-          <circle class="draw" pathLength="1" cx="440" cy="55" r="8"/>
-          <!-- 5-digit displays, left and right -->
-          <rect class="draw" pathLength="1" x="35" y="80" width="56" height="20"/>
-          <rect class="draw" pathLength="1" x="389" y="80" width="56" height="20"/>
-
-          <!-- dimensions -->
-          <line x1="0" y1="130" x2="480" y2="130" class="dim" pathLength="1"/>
-          <line x1="0" y1="124" x2="0" y2="136" class="dim" pathLength="1"/>
-          <line x1="480" y1="124" x2="480" y2="136" class="dim" pathLength="1"/>
-          <text x="240" y="150" class="dim-label" text-anchor="middle">336 &#215; 70 mm</text>
-          <text x="0" y="6" class="dim-label" text-anchor="start">EL-40804 — REV AA</text>
-        </svg>
       </div>
     </div>
   </header>
@@ -135,15 +136,26 @@
         <h2>Toolkit</h2>
       </div>
       <div class="skills-grid">
-        <div class="skill-group full">
-          <h3>Engineering</h3>
+        <div class="skill-group">
+          <h3>Design &amp; CAD</h3>
           <ul class="tick-list">
             <li>SolidWorks</li>
+            <li class="tick-empty">&nbsp;</li>
+            <li class="tick-empty">&nbsp;</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Analysis &amp; Simulation</h3>
+          <ul class="tick-list">
             <li>Altair</li>
             <li>Excel</li>
+            <li class="tick-empty">&nbsp;</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Manufacturing</h3>
+          <ul class="tick-list">
             <li>3D printing / prototyping</li>
-            <li class="tick-empty">&nbsp;</li>
-            <li class="tick-empty">&nbsp;</li>
             <li class="tick-empty">&nbsp;</li>
             <li class="tick-empty">&nbsp;</li>
           </ul>
@@ -156,19 +168,10 @@
         <span class="section-index">More</span>
         <h2>Explore</h2>
       </div>
-      <div class="chip-nav">
-        <a class="chip" href="experience.html">
-          <h3>Experience</h3>
-          <p>Bartending, pharmacy, Formula UBC.</p>
-        </a>
-        <a class="chip" href="projects.html">
-          <h3>Projects</h3>
-          <p>Dashboard enclosure, Two&#8209;Claw &amp; VSVB.</p>
-        </a>
-        <a class="chip" href="education.html">
-          <h3>Education</h3>
-          <p>UBC Engineering Physics.</p>
-        </a>
+      <div class="explore-line">
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
       </div>
     </section>
 
