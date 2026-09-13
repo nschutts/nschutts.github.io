@@ -339,94 +339,100 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 /* Icon links (used on the home hero) */
 .hero-location{ color: rgba(243,242,237,0.6); font-size: 0.85rem; margin: 0 0 1.25rem; }
 
-.icon-row{ display: flex; flex-wrap: wrap; gap: 1.75rem; margin: 0 0 2rem; }
+.icon-row{ display: flex; flex-wrap: wrap; gap: 1.25rem; margin: 0 0 2rem; }
 .icon-link{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  width: 84px;
+  justify-content: center;
   text-decoration: none;
   color: var(--muted);
 }
 .icon-link .icon-box{
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 0.2s ease;
 }
-.icon-link svg{ width: 26px; height: 26px; stroke: var(--blue); fill: none; stroke-width: 1.5; }
-.icon-link span{ font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; }
+.icon-link svg{ width: 22px; height: 22px; }
+.icon-link svg.icon-stroke{ fill: none; stroke: var(--blue); stroke-width: 1.6; }
+.icon-link svg.icon-fill{ fill: var(--blue); stroke: none; }
 .icon-link:hover .icon-box{ border-color: var(--rust); }
-.icon-link:hover svg{ stroke: var(--rust); }
-.icon-link:hover span{ color: var(--rust); }
+.icon-link:hover svg.icon-stroke{ stroke: var(--rust); }
+.icon-link:hover svg.icon-fill{ fill: var(--rust); }
 
-.icon-row.on-dark .icon-link{ color: rgba(243,242,237,0.75); }
 .icon-row.on-dark .icon-box{ border-color: rgba(243,242,237,0.35); }
-.icon-row.on-dark svg{ stroke: var(--blue-light); }
+.icon-row.on-dark svg.icon-stroke{ stroke: var(--blue-light); }
+.icon-row.on-dark svg.icon-fill{ fill: var(--blue-light); }
 .icon-row.on-dark .icon-link:hover .icon-box{ border-color: var(--rust-light); }
-.icon-row.on-dark .icon-link:hover svg{ stroke: var(--rust-light); }
-.icon-row.on-dark .icon-link:hover span{ color: var(--rust-light); }
+.icon-row.on-dark .icon-link:hover svg.icon-stroke{ stroke: var(--rust-light); }
+.icon-row.on-dark .icon-link:hover svg.icon-fill{ fill: var(--rust-light); }
 
-/* ---------- Preview bubbles (home, bottom) ---------- */
+/* ---------- Preview bubbles (home, bottom) ----------
+   Pure transform-based expansion: scale never affects layout flow, so
+   siblings and the rest of the page never shift. Generous gap + padding
+   around the row gives the scaled card room to grow without clipping. */
 .preview-bubbles{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.75rem;
-  padding: 1rem 0;
+  gap: 2.5rem;
+  padding: 2.5rem 0 2rem;
 }
 .preview-bubble{
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 230px;
-  border-radius: 22px;
-  background: var(--ink);
-  border: 1px solid var(--line);
-  text-decoration: none;
-  color: var(--paper);
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-.bubble-preview{
-  width: 100%;
-  height: 0;
-  overflow: hidden;
+  width: 210px;
+  padding: 1.75rem 1.5rem;
+  border-radius: 20px;
   background: var(--paper);
-  transition: height 0.3s ease;
+  border: 1px solid var(--line);
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
-.preview-bubble:hover .bubble-preview,
-.preview-bubble:focus-visible .bubble-preview{ height: 130px; }
-.preview-frame{
-  width: 1280px;
-  height: 960px;
-  border: 0;
-  transform: scale(0.18);
-  transform-origin: top left;
-  pointer-events: none;
+.bubble-index{
+  display: block;
+  font-size: 0.72rem;
+  color: var(--line);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
 }
-.bubble-label{ padding: 1.35rem 1.5rem; text-align: center; }
-.bubble-label h3{
+.preview-bubble h3{
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.05rem;
 }
-.bubble-label p{
-  margin: 0.45rem 0 0;
+.bubble-rule{
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--line);
+  margin: 0.85rem auto 0;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+.preview-bubble p{
+  margin: 0.65rem 0 0;
   font-size: 0.78rem;
-  color: rgba(243,242,237,0.7);
+  color: var(--muted);
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.2s ease, max-height 0.2s ease;
+  transition: opacity 0.25s ease, max-height 0.25s ease;
 }
-.preview-bubble:hover .bubble-label p,
-.preview-bubble:focus-visible .bubble-label p{ opacity: 1; max-height: 40px; }
 .preview-bubble:hover,
-.preview-bubble:focus-visible{ transform: translateY(-4px); border-color: var(--rust); }
+.preview-bubble:focus-visible{
+  transform: scale(1.1);
+  box-shadow: 0 16px 32px rgba(23,25,27,0.14);
+  z-index: 5;
+}
+.preview-bubble:hover .bubble-rule,
+.preview-bubble:focus-visible .bubble-rule{ width: 40px; background: var(--ink); }
+.preview-bubble:hover p,
+.preview-bubble:focus-visible p{ opacity: 1; max-height: 50px; }
 
 /* ---------- Footer ---------- */
 .site-footer{ background: var(--ink); color: var(--paper); }
@@ -499,6 +505,7 @@ main{ background: var(--paper); padding: 0 var(--gap); }
   .tl-item{ grid-template-columns: 1fr; gap: 0.4rem; }
   .topnav{ flex-direction: column; align-items: flex-start; }
   .navlinks{ font-size: 0.85rem; row-gap: 0.5rem; }
-  .preview-bubbles{ gap: 1.25rem; }
-  .preview-bubble{ width: 100%; max-width: 300px; }
+  .preview-bubbles{ gap: 1.5rem; padding: 1.5rem 0; }
+  .preview-bubble{ width: 100%; max-width: 280px; }
+  .preview-bubble:hover, .preview-bubble:focus-visible{ transform: scale(1.04); }
 }

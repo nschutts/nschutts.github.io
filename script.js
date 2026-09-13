@@ -3,21 +3,6 @@ document.querySelectorAll(".js-year").forEach(function (el) {
   el.textContent = new Date().getFullYear();
 });
 
-// Lazy-load the live page previews on the home page's bottom bubbles —
-// only fetch each preview page once the user actually hovers/focuses it.
-document.querySelectorAll(".preview-bubble").forEach(function (bubble) {
-  var frame = bubble.querySelector(".preview-frame");
-  if (!frame) return;
-  var loaded = false;
-  function load() {
-    if (loaded) return;
-    loaded = true;
-    frame.src = frame.getAttribute("data-src");
-  }
-  bubble.addEventListener("mouseenter", load);
-  bubble.addEventListener("focus", load, true);
-});
-
 /* ---------------------------------------------------------------------
    Animated background: a circuit-board / wiring-harness style network.
    A lattice of nodes (jittered grid, so it reads as a schematic rather
