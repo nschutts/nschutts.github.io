@@ -373,85 +373,75 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 
 /* ---------- Preview bubbles (home, bottom) ----------
    Pure transform-based expansion: scale never affects layout flow, so
-   siblings and the rest of the page never shift. Generous gap + padding
-   around the row gives the scaled card room to grow without clipping.
-   Each bubble carries its own --accent / --accent-soft custom properties
-   (set inline per instance) so one ruleset drives three distinct colors. */
+   siblings and the rest of the page never shift. Kept deliberately light —
+   a thin accent color and a small lift, nothing heavy or saturated.
+   Each bubble sets --accent inline so one ruleset drives three colors. */
 .preview-bubbles{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
-  padding: 2.5rem 0 2rem;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
 }
 .preview-bubble{
   position: relative;
-  width: 210px;
-  padding: 2rem 1.5rem 1.75rem;
-  border-radius: 20px;
+  width: 190px;
+  padding: 1.5rem 1.25rem;
+  border-radius: 14px;
   background: var(--paper);
   border: 1px solid var(--line);
   text-align: center;
   text-decoration: none;
   color: var(--ink);
-  overflow: hidden;
   transform-origin: center;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-}
-.preview-bubble::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--accent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .bubble-icon{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto 0.85rem;
-  border-radius: 50%;
-  background: var(--accent-soft);
+  width: 26px;
+  height: 26px;
+  margin: 0 auto 0.7rem;
   color: var(--accent);
+  opacity: 0.8;
+  transition: opacity 0.25s ease;
 }
-.bubble-icon svg{ width: 20px; height: 20px; }
+.bubble-icon svg{ width: 18px; height: 18px; }
 .preview-bubble h3{
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.05rem;
+  font-weight: 600;
+  font-size: 0.96rem;
 }
 .bubble-rule{
   display: block;
-  width: 20px;
+  width: 18px;
   height: 1px;
   background: var(--line);
-  margin: 0.85rem auto 0;
-  transition: width 0.3s ease, background 0.3s ease;
+  margin: 0.7rem auto 0;
+  transition: width 0.25s ease, background 0.25s ease;
 }
 .preview-bubble p{
-  margin: 0.65rem 0 0;
-  font-size: 0.78rem;
+  margin: 0.55rem 0 0;
+  font-size: 0.74rem;
   color: var(--muted);
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.25s ease, max-height 0.25s ease;
+  transition: opacity 0.2s ease, max-height 0.2s ease;
 }
 .preview-bubble:hover,
 .preview-bubble:focus-visible{
-  transform: scale(1.1);
+  transform: scale(1.04);
   border-color: var(--accent);
-  box-shadow: 0 18px 36px var(--accent-soft);
+  box-shadow: 0 10px 22px -8px var(--accent-soft);
   z-index: 5;
 }
-.preview-bubble:hover .bubble-rule,
-.preview-bubble:focus-visible .bubble-rule{ width: 40px; background: var(--accent); }
 .preview-bubble:hover .bubble-icon,
-.preview-bubble:focus-visible .bubble-icon{ background: var(--accent); color: var(--paper); }
+.preview-bubble:focus-visible .bubble-icon{ opacity: 1; }
+.preview-bubble:hover .bubble-rule,
+.preview-bubble:focus-visible .bubble-rule{ width: 28px; background: var(--accent); }
 .preview-bubble:hover p,
 .preview-bubble:focus-visible p{ opacity: 1; max-height: 50px; }
 
@@ -526,7 +516,6 @@ main{ background: var(--paper); padding: 0 var(--gap); }
   .tl-item{ grid-template-columns: 1fr; gap: 0.4rem; }
   .topnav{ flex-direction: column; align-items: flex-start; }
   .navlinks{ font-size: 0.85rem; row-gap: 0.5rem; }
-  .preview-bubbles{ gap: 1.5rem; padding: 1.5rem 0; }
-  .preview-bubble{ width: 100%; max-width: 280px; }
-  .preview-bubble:hover, .preview-bubble:focus-visible{ transform: scale(1.04); }
+  .preview-bubbles{ gap: 1.25rem; padding: 1.25rem 0; }
+  .preview-bubble{ width: 100%; max-width: 260px; }
 }
