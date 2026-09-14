@@ -425,11 +425,12 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .preview-bubble p{
   margin: 0.55rem 0 0;
   font-size: 0.74rem;
+  line-height: 1.4;
   color: var(--muted);
+  min-height: 2.8em;
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.2s ease, max-height 0.2s ease;
+  transform: translateY(3px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .preview-bubble:hover,
 .preview-bubble:focus-visible{
@@ -443,7 +444,7 @@ main{ background: var(--paper); padding: 0 var(--gap); }
 .preview-bubble:hover .bubble-rule,
 .preview-bubble:focus-visible .bubble-rule{ width: 28px; background: var(--accent); }
 .preview-bubble:hover p,
-.preview-bubble:focus-visible p{ opacity: 1; max-height: 50px; }
+.preview-bubble:focus-visible p{ opacity: 1; transform: translateY(0); }
 
 /* ---------- Footer ---------- */
 .site-footer{ background: var(--ink); color: var(--paper); }
