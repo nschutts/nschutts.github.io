@@ -41,44 +41,45 @@
   <main>
     <section class="section" style="border-top:none;">
 
-      <div class="gallery">
+      <div class="about-grid">
+        <div class="project-card">
+          <!-- Nick: replace/expand each paragraph below with the real story —
+               the design constraints you were given, what the claws actually
+               grab and how they're actuated, how the robot senses/navigates,
+               and how it performed (competition result, demo day, grade, etc). -->
+          <p>
+            <strong>The challenge:</strong><br> Design, assemble, and program a claw robot that can
+            autonomously pick up blocks.
+          </p>
+          <p>
+            <strong>The approach.</strong> I built the claw around an Arduino Uno, using two ski-style 
+            claw arms engineering specifically for the 1-inch blocks used in competition. The arms were actuated 
+            by a servo motor and fishing line, with a lightweight housing constructed from sheet aluminium, popsicle 
+            sticks, and hot glue. A HC-SR04 sonar was used to detect the ground, with a debouncing algorithm to prevent
+            false positives.
+          </p>
+           <p>
+            <strong>The result.</strong> The claw performed well at competition, moving up to 5 blocks at once. Through this
+             project, I gained experience using Arduino, applying programming skills to physical applications, and producing a
+             project end-to-end through the entire design cycle. I also encountered challenges; when the first sonar attached to my claw broke,
+             I learned the importance of designing parts that can be serviced or replaced without requiring total disassembly. Overall,
+             this was a fun in-class project which allowed me to apply theory to a "real-life" design challenge.
+           </p>
+          <div class="tag-row">
+            <span class="tag">Arduino</span>
+            <span class="tag">C/C++</span>
+            <span class="tag">Mechanical Design</span>
+          </div>
+        </div>
+        <div class="gallery">
           <figure>
-          <img class="lightbox-img" src="assets/img/claw-photo.jpg" alt="The built Two-Claw robot, showing the Arduino control box, wiring, and ski-style base." style="width:260px; height:260px; object-fit:contain; margin:0 auto; display:block;">
-          <figcaption>The finished build.</figcaption>
-        </figure>
-        <figure>
-          <img class="lightbox-img" src="assets/img/claw-sketch.jpg" alt="Hand-drawn concept sketch of the Two-Claw robot, labelled APSC 101 Group P10." style="width:260px; height:260px; object-fit:contain; margin:0 auto; display:block;">
-          <figcaption>Isometric sketch rendering of the claw.</figcaption>
-        </figure>
-      </div>
-
-      <div class="project-card">
-        <!-- Nick: replace/expand each paragraph below with the real story —
-             the design constraints you were given, what the claws actually
-             grab and how they're actuated, how the robot senses/navigates,
-             and how it performed (competition result, demo day, grade, etc). -->
-        <p>
-          <strong>The challenge:</strong><br> Design, assemble, and program a claw robot that can
-          autonomously pick up blocks.
-        </p>
-        <p>
-          <strong>The approach.</strong> I built the claw around an Arduino Uno, using two ski-style 
-          claw arms engineering specifically for the 1-inch blocks used in competition. The arms were actuated 
-          by a servo motor and fishing line, with a lightweight housing constructed from sheet aluminium, popsicle 
-          sticks, and hot glue. A HC-SR04 sonar was used to detect the ground, with a debouncing algorithm to prevent
-          false positives.
-        </p>
-         <p>
-          <strong>The result.</strong> The claw performed well at competition, moving up to 5 blocks at once. Through this
-           project, I gained experience using Arduino, applying programming skills to physical applications, and producing a
-           project end-to-end through the entire design cycle. I also encountered challenges; when the first sonar attached to my claw broke,
-           I learned the importance of designing parts that can be serviced or replaced without requiring total disassembly. Overall,
-           this was a fun in-class project which allowed me to apply theory to a "real-life" design challenge.
-         </p>
-        <div class="tag-row">
-          <span class="tag">Arduino</span>
-          <span class="tag">C/C++</span>
-          <span class="tag">Mechanical Design</span>
+            <img class="lightbox-img" src="assets/img/claw-photo.jpg" alt="The built Two-Claw robot, showing the Arduino control box, wiring, and ski-style base." style="width:260px; height:260px; object-fit:contain; margin:0 auto; display:block;">
+            <figcaption>The finished build.</figcaption>
+          </figure>
+          <figure>
+            <img class="lightbox-img" src="assets/img/claw-sketch.jpg" alt="Hand-drawn concept sketch of the Two-Claw robot, labelled APSC 101 Group P10." style="width:260px; height:260px; object-fit:contain; margin:0 auto; display:block;">
+            <figcaption>Isometric sketch rendering of the claw.</figcaption>
+          </figure>
         </div>
       </div>
 
