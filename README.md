@@ -1,85 +1,68 @@
 # Nick Schutts — Portfolio
 
-A multi-page portfolio site built with plain HTML/CSS/JS (no build step, no
-framework). Technical-drawing aesthetic, an animated circuit-trace
-background, and an expanding "chip" navigation on the home page.
+Source for my personal portfolio site, built to showcase my engineering
+work at UBC and with Formula UBC Racing.
 
-## Files
-- `index.html` — home page (hero with icon links, about, skills, chip nav)
-- `experience.html` — work history timeline
-- `projects.html` — project list
-- `project-dashboard-enclosure.html` — Formula UBC dashboard enclosure write-up
-- `project-two-claw.html` — APSC 101 Two-Claw robot write-up
-- `project-vsvb.html` — Vehicle System Validation Board (in progress)
-- `education.html` — academic record
-- `style.css` — all styling, shared across every page
-- `script.js` — animated background, image lightbox, footer year — shared across every page
-- `Nick_Schutts_Resume.pdf` — downloadable résumé, linked from the home page and every footer
-- `assets/img/` — project photos and the rasterized engineering drawing
-- `assets/Dash_Enclosure_Drawings.pdf` — original CAD drawing, linked for download
+**Live site:** [nschutts.github.io/portfolio](https://nschutts.github.io/portfolio)
+*(update this link to match your actual GitHub Pages URL)*
 
-There's no dedicated Contact page — email, LinkedIn, GitHub, and résumé are
-all reachable as icon links right in the home page hero (the first thing you
-see) and again in every page's footer.
+## About
 
-## Finishing the Two-Claw and VSVB pages
-Both have real structure but need your input:
-- `project-two-claw.html` has `<!-- Nick: ... -->` comments and
-  `[bracketed placeholders]` marking where to add the real story.
-- `project-vsvb.html` is deliberately styled as "in progress" (dashed
-  border, hatched placeholder image, an "IN PROGRESS" badge) and has the
-  same bracketed-placeholder pattern. As the project develops, replace the
-  placeholders, drop photos into `assets/img/`, and you can remove the
-  dashed/hatched treatment whenever it's ready to look "finished" — just
-  delete `class="in-progress"` from its tile in `projects.html` and swap the
-  `badge-progress` span and `thumb-placeholder` for real content.
+I'm a second-year Engineering Physics student at the University of British
+Columbia, currently working on the electrical subteam for Formula UBC
+Racing's 2025/26 Formula SAE car. This site collects my project work,
+experience, and background in one place — from a 3D-printed dashboard
+enclosure that raced at FSAE Michigan to an autonomous block-sorting robot
+built in first year.
 
-## Editing content
-Each page is a normal HTML file — open the one you want to change and edit
-the text directly. The nav bar and footer are repeated in every file (plain
-HTML has no shared template), so if you change a link, update it across all
-files to keep them consistent.
+## Stack
 
-To change colors or fonts, edit the `:root { ... }` block at the top of
-`style.css`.
+Static HTML, CSS, and vanilla JavaScript — no framework, no build step,
+no dependencies. Hosted on GitHub Pages.
 
-## The animated background
-`script.js` draws a circuit-trace network on a canvas fixed behind the whole
-site — nodes connected by traces, with small pulses of light traveling along
-them, and everything brightening near your cursor. It runs on every page
-automatically and turns static for visitors with "reduce motion" on.
+The visual language is built around technical engineering drawings: a
+drafting-sheet color palette, monospace data labels, and dimensioned line
+art traced from an actual SolidWorks drawing. The background on every page
+is a live canvas animation — a procedurally generated circuit-trace network
+with signal pulses that respond to the cursor — built to echo the
+electrical work the site documents.
 
-## Home page layout
-- The dashboard outline sits directly to the right of your name in the hero
-  (`.hero-name-row` in `index.html`) — it wraps below the name automatically
-  on narrow screens.
-- The "Toolkit" section is three columns (`Design & CAD`, `Analysis &
-  Simulation`, `Manufacturing`), each with its own header and a couple of
-  empty `tick-empty` slots to fill in later.
-- The bottom "Explore" section is a simple line of three links
-  (`.explore-line`) to Experience, Projects, and Education.
+## Structure
 
-## Home page icon links
-The Email / LinkedIn / GitHub / Resume row in the hero uses `.icon-link`
-elements inside `.icon-row.on-dark` (the `on-dark` modifier keeps them
-legible against the dark hero background). The same icon style, without
-`on-dark`, is available for use on light-background pages if you ever want
-it elsewhere.
+```
+index.html                          Home
+about.html                          Bio, photo, contact details
+experience.html                     Work history
+education.html                      Academic record
+projects.html                       Project index
+project-dashboard-enclosure.html    Formula UBC dashboard enclosure
+project-two-claw.html               Autonomous claw robot (APSC 101)
+project-vsvb.html                   Vehicle System Validation Board (in progress)
+style.css                           Site-wide styling
+script.js                           Background animation, lightbox, misc. UI
+assets/                             Photos, engineering drawings, résumé
+```
 
-## Image lightbox
-Any `<img class="lightbox-img" ...>` becomes clickable — clicking opens it
-full-screen, click again (or press Escape) to close.
+Every page is a standalone HTML file — there's no templating layer, so
+shared elements like the nav and footer are repeated across files by
+design, keeping the whole thing dependency-free and easy to host anywhere
+that serves static files.
 
-## Updating your résumé
-Replace `Nick_Schutts_Resume.pdf` with your new file, keeping the same
-filename — every link on the site already points to it.
+## Notable details
 
-## Deploying with GitHub Pages
-1. Create a new GitHub repo (public).
-2. Upload everything in this folder, **keeping the folder structure** — drag
-   the whole `assets` folder in at once so the `img` subfolder and its
-   contents stay nested correctly.
-3. In the repo, go to **Settings → Pages**, set **Source** to the `main`
-   branch and `/ (root)`, then save.
-4. Your site goes live at `https://<username>.github.io/<repo-name>/`
-   within a minute or two.
+- **Engineering drawings as design elements** — the dashboard enclosure's
+  outline on the home page is traced directly from its SolidWorks drawing,
+  dimensions and all.
+- **Real project documentation** — build photos, CAD renders, and the
+  original PDF drawing are all included, not just descriptions.
+- **No layout shift on interaction** — hover states throughout the site
+  (card lifts, image reveals) use transforms and reserved space rather than
+  resizing elements, so nothing else on the page moves.
+- **Lightbox viewer** — any project photo can be opened full-screen for a
+  closer look.
+
+## Contact
+
+- Email: nicholas.schutts@gmail.com
+- LinkedIn: [linkedin.com/in/nick-schutts](https://www.linkedin.com/in/nick-schutts-b05521326/)
+- GitHub: [github.com/nschutts](https://github.com/nschutts)
