@@ -3,8 +3,8 @@
 Source for my personal portfolio site, built to showcase my engineering
 work at UBC and with Formula UBC Racing.
 
-**Live site:** [nschutts.github.io/portfolio](https://nschutts.github.io/portfolio)
-*(update this link to match your actual GitHub Pages URL)*
+**Live site:** [nschutts.github.io](https://nschutts.github.io)
+
 
 ## About
 
