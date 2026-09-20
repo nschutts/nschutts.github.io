@@ -23,8 +23,8 @@ no dependencies. Hosted on GitHub Pages.
 The visual language is built around technical engineering drawings: a
 drafting-sheet color palette, monospace data labels, and dimensioned line
 art traced from an actual SolidWorks drawing. The background on every page
-is a live canvas animation — a procedurally generated circuit-trace network
-with signal pulses that respond to the cursor — built to echo the
+is a live canvas animation: procedurally generated circuit-trace network
+with signal pulses that respond to the cursor, built to echo the
 electrical work the site documents.
 
 ## Structure
